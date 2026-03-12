@@ -5,6 +5,5 @@
 
 curl https://zenodo.org/records/15228774/files/dtpaynt.zip?download=1 -o dtpaynt.zip
 
-unzip dtpaynt.zip
+unzip dtpaynt.zip -d dtpaynt
 docker load -i dtpaynt/dtpaynt.tar
-docker cp 420c7f2bc56e:/opt/cav25-experiments/benchmarks benchmarks
