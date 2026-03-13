@@ -1,3 +1,5 @@
 /benchmarks/
+/dtnest-benchmarks/
 /*.zip
+/*.tar
 /dtpaynt/
