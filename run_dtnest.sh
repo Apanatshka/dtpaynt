@@ -14,4 +14,4 @@ DTNEST="python3 /opt/paynt/paynt.py /opt/paynt/models/dts-uai/ --sketch $MODELNA
 # Editing the decision tree file directly as there is no other way to get the code to actually output the learned tree...
 SET_OUTPUT_NAME="sed -i '35i\\"$'\n'"        self.export_synthesis_filename_base = \"/opt/paynt/models/dts-uai/results/tree\""$'\n'"' /opt/paynt/paynt/synthesizer/decision_tree.py"
 
-docker run --volume="$1:/opt/paynt/models/dts-uai/$MODELNAME:ro" --volume="$2:/opt/paynt/models/dts-uai/$PROPNAME:ro" --volume="$3:/opt/paynt/models/dts-uai/state-valuations.json:ro" --volume="$4:/opt/paynt/models/dts-uai/decision_trees/default/scheduler:ro" --volume="$5:/opt/paynt/models/dts-uai/results" paynt:uai sh -c "$SET_OUTPUT_NAME; $DTNEST"
+docker run --volume="$1:/opt/paynt/models/dts-uai/$MODELNAME:ro" --volume="$2:/opt/paynt/models/dts-uai/$PROPNAME:ro" --volume="$3:/opt/paynt/models/dts-uai/state-valuations.json:ro" --volume="$4:/opt/paynt/models/dts-uai/decision_trees/default/scheduler/default.json:ro" --volume="$5:/opt/paynt/models/dts-uai/results" paynt:uai sh -c "$SET_OUTPUT_NAME; $DTNEST"
